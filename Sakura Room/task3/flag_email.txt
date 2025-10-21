@@ -1,0 +1,7 @@
+fathir@ruscy • ../Sakura Room/task3  ❯  gpg --import gpg.asc
+gpg: directory '/home/fathir/.gnupg' created
+gpg: keybox '/home/fathir/.gnupg/pubring.kbx' created
+gpg: /home/fathir/.gnupg/trustdb.gpg: trustdb created
+gpg: key ECDD0FD294110450: public key SakuraSnowAngel83@protonmail.com imported
+gpg: Total number processed: 1
+gpg:               imported: 1
