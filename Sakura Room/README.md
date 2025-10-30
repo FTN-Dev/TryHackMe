@@ -184,3 +184,79 @@ To find the cryptocurrency wallet information, I went to the attacker's Github p
 #### Second Flag
 
 Inside the repository, I found a file named `miningscript` that contains the attacker's cryptocurrency wallet address. But we need to see the history, so i click on the `History` button to see the commit history of the file. From the history, I found that the attacker had changed their wallet address in a first commit. By clicking on the first commit, I was able to see the old wallet address. The attacker's cryptocurrency wallet address is __0xa102397dbeeBeFD8cD2F73A89122fCdB53abB6ef__. This is the second flag.
+
+#### Third Flag
+
+To find the mining pool that the attacker received payments from on January 23, 2021 UTC, Am trying to search this `stratum://0xa102397dbeeBeFD8cD2F73A89122fCdB53abB6ef.Aiko:pswd@eu1.ethermine.org:4444` form github repository in google search, and i found this
+<a href='https://etherscan.io/txs?a=0xa102397dbeeBeFD8cD2F73A89122fCdB53abB6ef'>Etherscan</a> link that shows the transaction history of the attacker's wallet address. By looking at the transactions on January 23, 2021 UTC, I found that the attacker received payments from the mining pool __Ethermine__. This is the third flag. 
+
+#### Fourth Flag
+
+To find the other cryptocurrency that the attacker exchanged with using their cryptocurrency wallet, I looked further into the transaction history on Etherscan. I found that the attacker had exchanged Ethereum for __Tether__ (USDT) using their cryptocurrency wallet. This is the fourth flag.
+
+__Flags:__
+1. Ethereum
+2. 0xa102397dbeeBeFD8cD2F73A89122fCdB53abB6ef
+3. Ethermine
+4. Tether
+
+## Question 5 - TAUNT
+
+### Background
+Just as we thought, the cybercriminal is fully aware that we are gathering information about them after their attack. They were even so brazen as to message the OSINT Dojo on Twitter and taunt us for our efforts. The Twitter account which they used appears to use a different username than what we were previously tracking, maybe there is some additional information we can locate to get an idea of where they are heading to next?
+
+We've taken a screenshot of the message sent to us by the attacker, you can view it in your browser <a href='https://raw.githubusercontent.com/OsintDojo/public/main/taunt.png'>here</a>.
+
+### Instructions
+Although many users share their username across different platforms, it isn't uncommon for users to also have alternative accounts that they keep entirely separate, such as for investigations, trolling, or just as a way to separate their personal and public lives. These alternative accounts might contain information not seen in their other accounts, and should also be investigated thoroughly. In order to answer the following questions, you will need to view the screenshot of the message sent by the attacker to the OSINT Dojo on Twitter and use it to locate additional information on the attacker's Twitter account. You will then need to follow the leads from the Twitter account to the Dark Web and other platforms in order to discover additional information.
+
+ 1. What is the attacker's current Twitter handle?
+ 2. What is the BSSID for the attacker's Home WiFi?
+
+#### First Flag
+
+To find the attacker's current Twitter handle, I examined the screenshot of the message sent to the OSINT Dojo. The screenshot shows a Twitter profile with the name `AikoAbe3`. By searching for this name on Twitter, I found the attacker's current Twitter handle is __@SakuraLoverAiko__. This is the first flag.
+
+#### Second Flag
+
+So at the twitter of `AikoAbe3` we can see if there is  old and new screenshot post of `MD5` hashing. And in other post, we can see if AikoAbe is mentioning about `DeepPaste`, its refer to searching to the `DeepWeb`. But am not gonna do that, so we get help from the reddit that shows this <a href='https://raw.githubusercontent.com/OsintDojo/public/main/deeppaste.png'>image</a>. We can look at the Home WiFi. Lets try to find out the BSSID of this WiFi. And yea, we found this `84:AF:EC:34:FC:F8` on `Net ID`
+
+__Flags:__
+1. @SakuraLoverAiko
+2. 84:AF:EC:34:FC:F8
+
+## Question 6 - HOMEBOUND
+
+### Background
+
+Based on their tweets, it appears our cybercriminal is indeed heading home as they claimed. Their Twitter account seems to have plenty of photos which should allow us to piece together their route back home. If we follow the trail of breadcrumbs they left behind, we should be able to track their movements from one location to the next back all the way to their final destination. Once we can identify their final stops, we can identify which law enforcement organization we should forward our findings to.
+
+### Instructions
+
+In OSINT, there is oftentimes no "smoking gun" that points to a clear and definitive answer. Instead, an OSINT analyst must learn to synthesize multiple pieces of intelligence in order to make a conclusion of what is likely, unlikely, or possible. By leveraging all available data, an analyst can make more informed decisions and perhaps even minimize the size of data gaps. In order to answer the following questions, use the information collected from the attacker's Twitter account, as well as information obtained from previous parts of the investigation to track the attacker back to the place they call home.
+
+1. What airport is closest to the location the attacker shared a photo from prior to getting on their flight?
+2. What airport did the attacker have their last layover in?
+3. What lake can be seen in the map shared by the attacker as they were on their final flight home?
+4. What city does the attacker likely consider "home"?
+
+#### First Flag
+
+if u look at the first post of `@AikoAbe3` its picture of pink leaves tree. If u try to find the place, its similar `Long Bridge Park in Arlington, Virginia, United States`. Then i found out if its close to `Airport National Ronald Reagan Washington`, and the code of this airport is __DCA__.
+
+#### Second Flag
+
+and next, we can look at the airport pictures on `@AikoAbe3` account. If u can find or compare that pict to other pict, its from `HANEDA Airport` and the code is __HND__.
+
+#### Third Flag
+
+Lets open the <a href='maps.google.com'>maps</a> and compare the pict of the maps in AikoAbe's account in twitter, and we can see there is one lake that named __Lake Inawashiro__.
+
+#### Fourth Flag
+We can see at the `DeepPaste` Screenshot from the reddit before, there is City WiFi named __HIROSAKI__, and yea, this is the flag.
+
+__Flags:__
+1. DCA
+2. HND
+3. Lake Inawashiro
+4. Hirosaki
